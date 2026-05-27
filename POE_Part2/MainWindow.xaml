@@ -66,6 +66,6 @@
                         FontWeight="Bold"
                         Click="SendButton_Click"/>
             </Grid>
-        </Border>
+        </Border> 
     </Grid>
 </Window>
