@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36915.13 d17.14
+VisualStudioVersion = 17.14.36915.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CybersetcurityChatbot", "CybersetcurityChatbot\CybersetcurityChatbot.csproj", "{FCECD3B0-3BBE-4F66-9121-46506CB6B05C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POE_Part2", "POE_Part2\POE_Part2.csproj", "{62C1F7FB-FDFC-469E-85F7-226B5EBE6FC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FCECD3B0-3BBE-4F66-9121-46506CB6B05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCECD3B0-3BBE-4F66-9121-46506CB6B05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCECD3B0-3BBE-4F66-9121-46506CB6B05C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C1F7FB-FDFC-469E-85F7-226B5EBE6FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C1F7FB-FDFC-469E-85F7-226B5EBE6FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C1F7FB-FDFC-469E-85F7-226B5EBE6FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C1F7FB-FDFC-469E-85F7-226B5EBE6FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

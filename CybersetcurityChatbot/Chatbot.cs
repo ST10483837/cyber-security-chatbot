@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace CybersecurityChatbot
+namespace CyberGuard_Bot
 {
     public class Chatbot
     {
@@ -126,3 +126,4 @@ namespace CybersecurityChatbot
         }
     }
 }
+  
