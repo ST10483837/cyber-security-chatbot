@@ -1,5 +1,7 @@
 # 🛡️ CyberGuard Bot - Cybersecurity Chatbot
 
+"C:\Users\Student\Pictures\ASCII ART.png"
+
 ## Part 2 - WPF GUI Application
 
 A WPF desktop application that educates users about cybersecurity.
