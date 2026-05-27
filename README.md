@@ -1,6 +1,7 @@
 # 🛡️ CyberGuard Bot - Cybersecurity Chatbot
 
-"C:\Users\Student\Pictures\ASCII ART.png"
+<img width="738" height="540" alt="ASCII ART" src="https://github.com/user-attachments/assets/c67e6649-27c6-4937-9e2f-d81122024a30" />
+
 
 ## Part 2 - WPF GUI Application
 
