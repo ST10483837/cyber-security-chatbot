@@ -12,14 +12,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    
+
     - name: Restore dependencies
-      run: dotnet restore POE_Part2/POE_Part2.csproj
-    
-    - name: Build
+      run: dotnet restore
+
+    - name: Build solution
+      run: dotnet build cyber-security-chatbot.sln --configuration Release --no-restore
+
+    - name: Build POE_Part2 project directly
       run: dotnet build POE_Part2/POE_Part2.csproj --configuration Release --no-restore
