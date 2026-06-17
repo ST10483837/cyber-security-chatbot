@@ -61,6 +61,7 @@ A comprehensive cybersecurity awareness application that educates users about on
 <img width="1907" height="1032" alt="Screenshot 2026-06-17 151917" src="https://github.com/user-attachments/assets/c714554f-750b-4c90-8143-b1c13c693656" />
 
 
+
 ---
 
 ## 🏗️ Code Structure
