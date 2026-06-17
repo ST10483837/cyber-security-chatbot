@@ -2,9 +2,9 @@ name: .NET Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]      # CHANGED: main → master
   pull_request:
-    branches: [ main ]
+    branches: [ master ]      # CHANGED: main → master
 
 jobs:
   build:
@@ -22,6 +22,4 @@ jobs:
       run: dotnet restore POE_Part2/POE_Part2.csproj
     
     - name: Build
-      run: dotnet build POE_Part2/POE_Part2.csproj --configuration Release --no-restore
-      env:
-        EnableWindowsTargeting: true
+      run: dotnet build POE_Part2/POE_Part2.csproj -p:EnableWindowsTargeting=true --configuration Release --no-restore
