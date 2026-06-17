@@ -56,7 +56,7 @@ namespace POE_Part2
         {
             ProcessUserInput();
         }  
-
+         
         private void UserInputTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
