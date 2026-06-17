@@ -10,9 +10,8 @@ namespace POE_Part2
         private Random random;
         private string lastTopic;
 
-        public string UserName { get; set; }
-        public string FavoriteTopic { get; set; }
-
+        public string UserName { get; set; } = string.Empty;
+        public string FavoriteTopic { get; set; } = string.Empty;
         public Chatbot()
         {
             keywordResponses = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);

@@ -11,7 +11,8 @@ namespace POE_Part2
         {
             try
             {
-                string audioPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\Student\Downloads\greeting.wav");
+                // Direct path to your Downloads folder
+                string audioPath = @"C:\Users\Student\Downloads\greeting.wav";
 
                 if (File.Exists(audioPath))
                 {

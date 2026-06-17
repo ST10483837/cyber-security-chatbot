@@ -2,9 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="CyberGuard Bot" 
-        Height="550" Width="750"
+        Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
-        MinHeight="400" MinWidth="600">
+        MinHeight="500" MinWidth="800">
 
     <Grid Background="#1E1E2E">
         <Grid.RowDefinitions>
@@ -28,15 +28,172 @@
             </StackPanel>
         </Border>
 
-        <!-- CHAT DISPLAY - ListBox (fixed) -->
-        <ListBox x:Name="ChatDisplay" 
-                 Grid.Row="1"
-                 Background="#2D2D3D" 
-                 Foreground="White" 
-                 FontSize="13" 
-                 Margin="10" 
-                 BorderBrush="#6C63FF" 
-                 BorderThickness="1"/>
+        <!-- CHAT + TASK PANEL (Side by Side) -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- LEFT: Chat Display -->
+            <ListBox x:Name="ChatDisplay" 
+                     Grid.Column="0"
+                     Background="#2D2D3D" 
+                     Foreground="White" 
+                     FontSize="13" 
+                     Margin="10" 
+                     BorderBrush="#6C63FF" 
+                     BorderThickness="1"/>
+
+            <!-- RIGHT: Task Assistant Panel -->
+            <Border Grid.Column="1" 
+                    Background="#3D3D4D" 
+                    Margin="0,10,10,10" 
+                    CornerRadius="10" 
+                    BorderBrush="#6C63FF" 
+                    BorderThickness="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="📋 Task Assistant" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="White" 
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,10"/>
+
+                        <!-- Title -->
+                        <TextBlock Text="Title:" Foreground="#E0DDFF" FontSize="11"/>
+                        <TextBox x:Name="TaskTitleTextBox" 
+                                 Background="#4D4D5D" 
+                                 Foreground="White" 
+                                 BorderBrush="#6C63FF" 
+                                 BorderThickness="1"
+                                 Margin="0,0,0,8"
+                                 Padding="5"/>
+
+                        <!-- Description -->
+                        <TextBlock Text="Description:" Foreground="#E0DDFF" FontSize="11"/>
+                        <TextBox x:Name="TaskDescriptionTextBox" 
+                                 Background="#4D4D5D" 
+                                 Foreground="White" 
+                                 BorderBrush="#6C63FF" 
+                                 BorderThickness="1"
+                                 Margin="0,0,0,8"
+                                 Padding="5"
+                                 Height="50"
+                                 TextWrapping="Wrap"/>
+
+                        <!-- Reminder -->
+                        <TextBlock Text="Reminder (e.g., In 3 days):" Foreground="#E0DDFF" FontSize="11"/>
+                        <TextBox x:Name="TaskReminderTextBox" 
+                                 Background="#4D4D5D" 
+                                 Foreground="White" 
+                                 BorderBrush="#6C63FF" 
+                                 BorderThickness="1"
+                                 Margin="0,0,0,8"
+                                 Padding="5"/>
+
+                        <!-- Add Button -->
+                        <Button x:Name="AddTaskButton" 
+                                Content="➕ Add Task" 
+                                Background="#6C63FF" 
+                                Foreground="White" 
+                                FontWeight="Bold"
+                                Click="AddTaskButton_Click"
+                                Margin="0,0,0,10"
+                                Padding="10"
+                                Cursor="Hand"/>
+
+                        <!-- Task List -->
+                        <TextBlock Text="Your Tasks:" Foreground="#E0DDFF" FontSize="11" Margin="0,5,0,5"/>
+                        <ListBox x:Name="TaskListBox" 
+                                 Background="#2D2D3D" 
+                                 Foreground="White" 
+                                 FontSize="12" 
+                                 Height="140"
+                                 BorderBrush="#6C63FF" 
+                                 BorderThickness="1"
+                                 SelectionChanged="TaskListBox_SelectionChanged"/>
+
+                        <!-- Action Buttons -->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Button x:Name="CompleteTaskButton" 
+                                    Content="✅ Complete" 
+                                    Background="#28A745" 
+                                    Foreground="White"
+                                    Click="CompleteTaskButton_Click"
+                                    Width="85"
+                                    Margin="0,0,5,0"
+                                    Padding="5"
+                                    Cursor="Hand"/>
+                            <Button x:Name="DeleteTaskButton" 
+                                    Content="🗑️ Delete" 
+                                    Background="#DC3545" 
+                                    Foreground="White"
+                                    Click="DeleteTaskButton_Click"
+                                    Width="85"
+                                    Padding="5"
+                                    Cursor="Hand"/>
+                        </StackPanel>
+
+                        <!-- ============================================================ -->
+                        <!-- NEW: QUIZ SECTION                                           -->
+                        <!-- ============================================================ -->
+                        <Border Background="#2D2D3D" 
+                                CornerRadius="8" 
+                                Margin="0,10,0,0" 
+                                Padding="8"
+                                BorderBrush="#6C63FF" 
+                                BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="🎯 Cybersecurity Quiz" 
+                                           FontSize="14" 
+                                           FontWeight="Bold" 
+                                           Foreground="White" 
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,8"/>
+                                <TextBlock Text="Test your cybersecurity knowledge!" 
+                                           Foreground="#E0DDFF" 
+                                           FontSize="10" 
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,8"/>
+                                <Button x:Name="StartQuizButton" 
+                                        Content="🚀 Start Quiz" 
+                                        Background="#6C63FF" 
+                                        Foreground="White" 
+                                        FontWeight="Bold"
+                                        Click="StartQuizButton_Click"
+                                        Padding="10"
+                                        Cursor="Hand"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Quick Tip -->
+                        <TextBlock Text="💡 Try typing in chat:" 
+                                   Foreground="#E0DDFF" 
+                                   FontSize="10" 
+                                   Margin="0,10,0,0"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock Text="'Add a task to enable 2FA'" 
+                                   Foreground="#A0AEC0" 
+                                   FontSize="10" 
+                                   FontStyle="Italic"/>
+                        <TextBlock Text="'Remind me to update my password'" 
+                                   Foreground="#A0AEC0" 
+                                   FontSize="10" 
+                                   FontStyle="Italic"/>
+                        <TextBlock Text="'Show activity log'" 
+                                   Foreground="#A0AEC0" 
+                                   FontSize="10" 
+                                   FontStyle="Italic"/>
+                        <TextBlock Text="'Start quiz'" 
+                                   Foreground="#A0AEC0" 
+                                   FontSize="10" 
+                                   FontStyle="Italic"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
 
         <!-- INPUT AREA -->
         <Border Grid.Row="2" Background="#3D3D4D">
@@ -66,6 +223,6 @@
                         FontWeight="Bold"
                         Click="SendButton_Click"/>
             </Grid>
-        </Border> 
+        </Border>
     </Grid>
 </Window>
