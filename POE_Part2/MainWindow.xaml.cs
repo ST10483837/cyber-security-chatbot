@@ -55,7 +55,7 @@ namespace POE_Part2
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
             ProcessUserInput();
-        }  
+        }   
          
         private void UserInputTextBox_KeyDown(object sender, KeyEventArgs e)
         {
