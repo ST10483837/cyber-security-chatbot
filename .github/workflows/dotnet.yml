@@ -23,3 +23,5 @@ jobs:
     
     - name: Build
       run: dotnet build POE_Part2/POE_Part2.csproj --configuration Release --no-restore
+      env:
+        EnableWindowsTargeting: true
