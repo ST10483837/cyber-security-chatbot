@@ -238,5 +238,5 @@ namespace POE_Part2
         public string CorrectAnswer { get; set; } = string.Empty;
         public string Explanation { get; set; } = string.Empty;
         public string Topic { get; set; } = string.Empty;
-    }
+    } 
 }   
