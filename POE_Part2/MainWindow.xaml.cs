@@ -49,7 +49,7 @@ namespace POE_Part2
             AddMessage("CyberGuard Bot", "What's your name? 💫");
 
             // Load tasks from database
-            LoadTasks();
+            LoadTasks(); 
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
